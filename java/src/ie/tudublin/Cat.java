@@ -12,7 +12,19 @@ public class Cat extends Animal
     {
         return numLives;
     }
-
+	
+	public void kill(){
+		
+		if(numLives <= 1){
+			numLives = 0;
+			System.out.println("Ded!");
+		}
+		else{
+			numLives = numLives - 1;
+			System.out.println("Roblox OOOOOf!");
+		}
+	}
+	
     public void speak()
     {
         System.out.println("Meow!");
