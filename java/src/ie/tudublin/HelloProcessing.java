@@ -12,7 +12,7 @@ public class HelloProcessing extends PApplet
 	public void setup() {
 	}
 
-	
+	public float iteration = 1;
 	public int i = 0;
 	public int eye = 0;
 	public void draw() {
@@ -24,7 +24,7 @@ public class HelloProcessing extends PApplet
 		stroke(255, 0, 0);
 		fill(0, 255, 255);
 		circle(250, 300, 400);
-		
+		fill(10, 255, 255,10);
 		triangle(250, 50, 50, 450, 450, 450); // vertices	
 
 		ellipse(250, 250, 200, mouseX%100);
@@ -35,10 +35,22 @@ public class HelloProcessing extends PApplet
 		fill(0, 255, 0);
 		ellipse(250, 250, 50, mouseX%50);
 		
-
+		iteration = 1;
+		drawYoke(500,250,1);
 
 	}	
 	
+	public void drawYoke(float x5,float y5, float it){
+
+		stroke(255, 250, 250);
+		fill(255, 255, 0);
+		line(x5,y5,(x5+1)*it,(y5-50)/it*2);
+
+		if(it < 10){
+			drawYoke((x5+1)*it,(y5-50)/it*2,it+1);		
+		}
+		iteration++;
+	}
 
 	int x = 0; // 4 bytes
 	
