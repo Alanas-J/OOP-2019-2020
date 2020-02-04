@@ -33,13 +33,14 @@ public class HelloProcessing extends PApplet
 		point(50, 50); // x, y
 		 // cx, cy, w, h
 		fill(0, 255, 0);
-		ellipse(250, 250, 50, mouseX%50);
+		ellipse(250, 250, 50, (mouseX%100)/2);
 		
-		iteration = 1;
-		drawYoke(500,250,1);
+		//iteration = 1;
+		//drawYoke(500,250,1);
 
 	}	
 	
+	/*
 	public void drawYoke(float x5,float y5, float it){
 
 		stroke(255, 250, 250);
@@ -51,7 +52,7 @@ public class HelloProcessing extends PApplet
 		}
 		iteration++;
 	}
-
+	*/
 	int x = 0; // 4 bytes
 	
 	/*
