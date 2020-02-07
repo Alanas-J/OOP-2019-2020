@@ -27,8 +27,11 @@ public class BugZap extends PApplet{
 
 	public void draw()
 	{	
-       background(0,10);
-       
+       background(0);
+       fill(125);
+       rect(0, 0, 500, 500);
+       fill(255);
+
        playerX = playerX%500;
        if(playerX < 0){
            playerX = 490;
