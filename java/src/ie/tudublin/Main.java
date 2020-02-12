@@ -35,11 +35,9 @@ public class Main
         // This is not polymorphism
         Cat topcat = new Cat("Topcat");
 
-<<<<<<< HEAD
         Main main = new Main();
 		//main.airSeaBattle();
         main.loops();
-=======
         // This is polymorphism!
         Animal mino = new Cat("Mino");
         // A vitual method!
@@ -69,5 +67,11 @@ public class Main
         // c c will get printed out because 
         // a & b are object references
 
+    }
+    
+    public static void main(String[] arg)
+    {
+        Main main = new Main();
+		main.loops();        
     }
 }
