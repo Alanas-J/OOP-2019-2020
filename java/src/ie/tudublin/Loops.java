@@ -11,7 +11,9 @@ public class Loops extends PApplet
 
 	public void setup() 
 	{
-		
+	
+
+
 	}
 
 	
@@ -23,6 +25,14 @@ public class Loops extends PApplet
 
 	public void draw()
 	{	
-		background(0);		
+		background(0);	
+		for(int i = 0;i<500; i = i+5){
+
+			stroke(i%255);
+
+			line(i, 0, i, 500);
+
+		}
+	
 	}
 }
