@@ -28,7 +28,6 @@ public class Loops extends PApplet
 
 	public void draw()
 	{	
-<<<<<<< HEAD
 		background(0);	
 		for(int i = 0;i<500; i = i+5){
 

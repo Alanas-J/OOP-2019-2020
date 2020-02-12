@@ -70,11 +70,4 @@ public class Main
         // a & b are object references
 
     }
-    
-    public static void main(String[] arg)
-    {
-        Main main = new Main();
-		main.loops();        
->>>>>>> 8f0bb789dfdaf47f8a4e396dbaa9d71e7a1127d7
-    }
 }
