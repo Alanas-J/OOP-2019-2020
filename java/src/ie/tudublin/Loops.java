@@ -89,6 +89,8 @@ public class Loops extends PApplet
 		//loops1();
 
 		loops2();
+	
+		
 
 		//loops3();
 	}
