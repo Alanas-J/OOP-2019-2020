@@ -20,7 +20,7 @@ public class Loops extends PApplet
 
 	
 	public void coolLines(){
-		stroke(f%255,255,255);
+		stroke(baseColor%255,255,255);
 		for(int i = 0; i <= 500; i= i+ 20){
 
 			line(0, i, 500,500-i);
@@ -33,21 +33,20 @@ public class Loops extends PApplet
 	
 	public void circlesDraw(){
 		
-		f=f+10;
+		baseColor=baseColor+10; // rate of colour change
 		noStroke();
 		int x = 0;
+		int circleRadius = 25;
 
-		for (int i = 25; i<width; i=i+50){
+		for (int xPos = circleRadius; xPos<width; xPos=xPos+(2*circleRadius)){
 			
 			
-
-
-			for (int j = 25; j<height; j=j+50){
+			for (int yPos = circleRadius; yPos<height; yPos=yPos+(2*circleRadius)){
 				
-				x = (255*(j+i-25))/(height+width);
+				x = (255*(yPos+xPos-25))/(height+width);
 
-				fill((x+f)%255,255,255);
-				circle((float)i, (float)j, 50);
+				fill((x+baseColor)%255,255,255);
+				circle((float)xPos, (float)yPos, 50);
 			}
 			
 		}
@@ -62,15 +61,15 @@ public class Loops extends PApplet
 		}
 	}	
 
-	int f = 0;
+	int baseColor = 0;
 	public void draw()
 	{	
 		background(100);	
 		
 
-		//circlesDraw();
+		circlesDraw();
 		//coolLines();
-		drawGrid();
+		//drawGrid();
 	
 		
 	}
