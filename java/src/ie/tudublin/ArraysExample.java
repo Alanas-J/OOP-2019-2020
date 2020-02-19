@@ -15,6 +15,7 @@ public class ArraysExample extends PApplet
 	public void settings()
 	{
 		size(600, 600);
+		
 	}
 
 	public void setup() 
@@ -80,13 +81,16 @@ public class ArraysExample extends PApplet
 	{
 		if (key == ' ')
 		{
-			
+			background(0);
 		}
 	}	
 
 	public void draw()
 	{	
-		background(0);		
+		copy(0, 0,	width, height, 10, 20, width, height);
+		fill(0,80);
+		square(0,0,height);
+		fill(255);
 		colorMode(HSB);	
 
 		drawGraph();
