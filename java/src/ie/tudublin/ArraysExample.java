@@ -14,7 +14,7 @@ public class ArraysExample extends PApplet
 
 	public void settings()
 	{
-		size(500, 500);
+		size(600, 600);
 	}
 
 	public void setup() 
@@ -44,7 +44,7 @@ public class ArraysExample extends PApplet
 		}
 		println(months[minIndex] + " had the minimum rainfall of " + rainFall[minIndex]);
 		
-		int maxIndex = 0;
+		
 		for(int i = 1 ; i < rainFall.length ; i ++)
 		{
 			if (rainFall[i] > rainFall[maxIndex])
@@ -67,7 +67,7 @@ public class ArraysExample extends PApplet
 		float w = width / (float) rainFall.length;
 		float cGap = 255 / (float) rainFall.length;
 		noStroke();
-		colorMode(HSB);
+		colorMode(RGB);
 		for(int i = 0 ; i < rainFall.length ; i ++)
 		{
 			float x = i * w;
@@ -89,6 +89,78 @@ public class ArraysExample extends PApplet
 		background(0);		
 		colorMode(HSB);	
 
-		drawBarChart();
+		drawGraph();
+		//drawBarChart();
+	}
+
+	boolean flip = true;
+	int rgb = 0;
+	int maxIndex = 0;
+	int cushion = 60;
+	void drawGraph(){
+
+		
+		if(flip){
+			cushion++;
+			if(cushion > 200){
+				flip = false;
+			}
+		}
+		else{
+			cushion--;
+
+			if(cushion < 40){
+				flip = true;
+			}
+		}
+
+
+
+		stroke(185);
+		line(cushion, cushion, cushion, height-cushion);
+		line(cushion, height-cushion, width-cushion, height-cushion);
+
+
+		float currentPoint;
+		float prevPoint;
+		for(int i = 0 ; i < rainFall.length; i++){
+
+	
+			float x = map(i,0, rainFall.length-1,cushion,width-cushion);		
+			stroke(255);
+			line(x, height-cushion+3, x, height-cushion-3);
+
+			if(i > 0){
+				rgb = rgb + 25;
+				stroke(rgb%255,255,255);
+
+				currentPoint = map(rainFall[i], 0, rainFall[maxIndex], height-cushion, cushion);
+				prevPoint = map(rainFall[i-1], 0, rainFall[maxIndex], height-cushion, cushion);
+
+				line(x, currentPoint, map(i-1,0, rainFall.length-1,cushion,width-cushion), prevPoint);	
+			}
+
+			textAlign(CENTER);
+			text(months[i],x, height-cushion+20);
+
+		}
+
+		int ySteps = (int) (rainFall[maxIndex] / 10);
+		ySteps++;
+
+		for(int i = 0; i <= ySteps; i++ ){
+			
+			float y = map(i,0, ySteps, height-cushion, cushion);
+			
+			stroke(255);
+			line(cushion+3, height-y, cushion-3, height-y);
+
+			String s = ""+(i*10);
+			textAlign(RIGHT,CENTER);
+			text(s, cushion-10, y);
+
+		}
+
+
 	}
 }
