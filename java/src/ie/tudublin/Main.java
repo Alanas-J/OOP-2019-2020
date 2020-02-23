@@ -3,17 +3,14 @@ package ie.tudublin;
 public class Main
 {
 
+    /*
     public void helloProcessing()
 	{
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new HelloProcessing());
     }
 
-    public void loops()
-    {
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Loops());
-    }
+
     
     public void bugZap()
 	{
@@ -26,7 +23,7 @@ public class Main
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new AirSeaBattle());
 	}
-    
+    */
     public static void main(String[] arg)
     {
         /*
@@ -43,5 +40,10 @@ public class Main
         Main main = new Main();
 		//main.airSeaBattle();
         main.loops();
+    }
+    public void loops()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Loops());
     }
 }
